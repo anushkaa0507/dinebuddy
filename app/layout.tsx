@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+import { Playfair_Display, Inter } from "next/font/google";
 
+const serif = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 export const metadata: Metadata = {
   title: "DineBuddy",
   description: "DineBuddy App",
