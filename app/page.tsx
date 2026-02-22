@@ -19,7 +19,7 @@ export default function Home() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D241E]/40 to-[#2D241E]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2D241E]/41 to-[#2D241E]/90" />
 
         <div className="relative z-10 max-w-2xl text-[#EAE3D5]">
           <p className="uppercase tracking-[0.4em] text-sm text-[#A68966] mb-6">
