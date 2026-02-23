@@ -19,11 +19,11 @@ export default function Home() {
           className="object-cover"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-[#2D241E]/41 to-[#2D241E]/90" />
+        <div className="absolute inset-0 bg-linear-to-b from-[#2D241E]/41  to-[#2D241E]/90" />
 
         <div className="relative z-10 max-w-2xl text-[#EAE3D5]">
           <p className="uppercase tracking-[0.4em] text-sm text-[#A68966] mb-6">
-            Est. 1992 • Fine Dining
+            Fine Dining
           </p>
 
           <h1 className="text-6xl lg:text-7xl font-serif italic leading-tight mb-6">
@@ -49,8 +49,10 @@ export default function Home() {
               </button>
             </SignedOut>
 
-            
-            <button className="border border-[#EAE3D5]/40 px-8 py-4 uppercase text-sm tracking-widest hover:bg-[#EAE3D5]/10 transition">
+            <button
+              onClick={() => router.push("/dinebuddy/menu")}
+              className="border border-[#EAE3D5]/40 px-8 py-4 uppercase text-sm tracking-widest hover:bg-[#EAE3D5]/10 transition"
+            >
               Explore Menu
             </button>
           </div>
