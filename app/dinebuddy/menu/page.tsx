@@ -1,26 +1,12 @@
 "use client";
 
+import Header from "@/app/components/Header";
 import Image from "next/image";
 
 export default function MenuPage() {
   return (
     <main className="bg-background-light text-slate-900 font-display">
-      <header className="sticky top-0 z-50 w-full border-b border-primary/10 bg-background-light/80 backdrop-blur-md px-6 lg:px-20">
-        <div className="max-w-7xl mx-auto flex h-20 items-center justify-between">
-          <h1 className="text-xl font-bold uppercase">
-            DineBuddy
-          </h1>
-
-          <nav className="hidden md:flex gap-8 text-sm">
-            <a className="hover:text-primary">Our Story</a>
-            <a className="text-primary font-bold border-b-2 border-primary pb-1">
-              Menu
-            </a>
-            <a className="hover:text-primary">Location</a>
-            <a className="hover:text-primary">Gallery</a>
-          </nav>
-        </div>
-      </header>
+    <Header />
 
       <section className="relative h-[400px] w-full overflow-hidden">
         <Image

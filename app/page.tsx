@@ -55,6 +55,12 @@ export default function Home() {
             >
               Explore Menu
             </button>
+             <button
+              onClick={() => router.push("#")}
+              className="border border-[#EAE3D5]/40 px-8 py-4 uppercase text-sm tracking-widest hover:bg-[#EAE3D5]/10 transition"
+            >
+              Book a Table
+            </button>
           </div>
         </div>
       </section>
@@ -82,7 +88,6 @@ function Navbar() {
           <a href="#about">About</a>
         </nav>
 
-        {/* ---------- AUTH AREA ---------- */}
         <div className="flex items-center gap-6">
           <SignedOut>
             <button
