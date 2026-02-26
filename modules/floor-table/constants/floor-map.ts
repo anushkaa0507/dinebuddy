@@ -1,0 +1,193 @@
+import { CheckCircle2, Users, CalendarCheck, Sparkles } from "lucide-react";
+import { TableData, WaitlistEntry, TableStatus } from "../types/floor-map";
+
+export const tables: TableData[] = [
+  {
+    id: "T-01",
+    label: "T-01",
+    seats: 2,
+    status: "available",
+    shape: "circle",
+    gridCol: 1,
+    gridRow: 1,
+  },
+  {
+    id: "T-12",
+    label: "T-12 (GRAND)",
+    seats: 8,
+    status: "occupied",
+    time: "1h 12m",
+    isGrand: true,
+    shape: "square",
+    gridCol: 2,
+    gridRow: 1,
+  },
+  {
+    id: "T-22",
+    label: "T-22",
+    seats: 6,
+    status: "occupied",
+    time: "22m",
+    shape: "square",
+    gridCol: 3,
+    gridRow: 1,
+  },
+  {
+    id: "T-02",
+    label: "T-02",
+    seats: 2,
+    status: "occupied",
+    time: "45m",
+    shape: "circle",
+    gridCol: 1,
+    gridRow: 2,
+  },
+  {
+    id: "T-15",
+    label: "T-15",
+    seats: 4,
+    status: "cleaning",
+    note: "CLEANING",
+    shape: "square",
+    gridCol: 2,
+    gridRow: 2,
+  },
+  {
+    id: "T-09",
+    label: "T-09",
+    seats: 4,
+    status: "reserved",
+    note: "RSVP 8PM",
+    shape: "square",
+    gridCol: 1,
+    gridRow: 3,
+  },
+  {
+    id: "T-04",
+    label: "T-04",
+    seats: 2,
+    status: "reserved",
+    note: "RSVP 8:30",
+    shape: "circle",
+    gridCol: 2,
+    gridRow: 3,
+  },
+  {
+    id: "T-08",
+    label: "T-08",
+    seats: 4,
+    status: "available",
+    shape: "square",
+    gridCol: 1,
+    gridRow: 4,
+  },
+  {
+    id: "T-03",
+    label: "T-03",
+    seats: 2,
+    status: "available",
+    shape: "circle",
+    gridCol: 2,
+    gridRow: 4,
+  },
+];
+
+export const waitlist: WaitlistEntry[] = [
+  {
+    id: "w1",
+    name: "The Smith Family",
+    pax: 4,
+    preference: "Any",
+    prefIcon: "any",
+    waitMin: 15,
+  },
+  {
+    id: "w2",
+    name: "John D.",
+    pax: 2,
+    preference: "Outdoor pref.",
+    prefIcon: "outdoor",
+    waitMin: 5,
+  },
+  {
+    id: "w3",
+    name: "Elena & Co",
+    pax: 6,
+    preference: "Birthday",
+    prefIcon: "birthday",
+    waitMin: 35,
+  },
+  {
+    id: "w4",
+    name: "M. Thompson",
+    pax: 1,
+    preference: "Near outlet",
+    prefIcon: "outlet",
+    waitMin: 40,
+  },
+];
+
+export const statusConfig: Record<
+  TableStatus,
+  { bg: string; text: string; border: string }
+> = {
+  available: {
+    bg: "bg-[#4a7c6f]",
+    text: "text-white",
+    border: "border-[#3d6b5e]",
+  },
+  occupied: {
+    bg: "bg-[#b5422a]",
+    text: "text-white",
+    border: "border-[#9e3823]",
+  },
+  reserved: {
+    bg: "bg-[#c9962a]",
+    text: "text-white",
+    border: "border-[#b88520]",
+  },
+  cleaning: {
+    bg: "bg-[#7c5cbf]",
+    text: "text-white",
+    border: "border-[#6b4dac]",
+  },
+};
+
+export const statusSummaryItems = [
+  {
+    status: "available" as TableStatus,
+    label: "Available",
+    count: 12,
+    icon: CheckCircle2,
+    iconColor: "text-[#4a7c6f]",
+    cardBg: "bg-[#edf4f1]",
+    countColor: "text-[#4a7c6f]",
+  },
+  {
+    status: "occupied" as TableStatus,
+    label: "Occupied",
+    count: 18,
+    icon: Users,
+    iconColor: "text-[#b5422a]",
+    cardBg: "bg-[#faeae6]",
+    countColor: "text-[#b5422a]",
+  },
+  {
+    status: "reserved" as TableStatus,
+    label: "Reserved",
+    count: 4,
+    icon: CalendarCheck,
+    iconColor: "text-[#c9962a]",
+    cardBg: "bg-[#fef8ec]",
+    countColor: "text-[#c9962a]",
+  },
+  {
+    status: "cleaning" as TableStatus,
+    label: "Cleaning",
+    count: 2,
+    icon: Sparkles,
+    iconColor: "text-[#7c5cbf]",
+    cardBg: "bg-[#f2eefc]",
+    countColor: "text-[#7c5cbf]",
+  },
+];
