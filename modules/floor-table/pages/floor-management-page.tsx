@@ -1,10 +1,16 @@
+"use client";
+
 import { Search, Plus, Filter, Grid2X2, Bell, User } from "lucide-react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FloorGrid } from "../components/manage-floor/floor-grid";
 import { StatsSummary } from "../components/manage-floor/stats-summary";
+import { AddFloorModal } from "../components/manage-floor/add-floor-modal";
 
 export function FloorManagementPage() {
+  const [isAddFloorOpen, setIsAddFloorOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Top Navigation Bar */}
@@ -35,6 +41,7 @@ export function FloorManagementPage() {
           <div className="flex items-center gap-3">
             <Button
               size="sm"
+              onClick={() => setIsAddFloorOpen(true)}
               className="hidden sm:flex items-center gap-2 bg-primary text-white font-semibold rounded-lg hover:bg-primary/90 transition-colors shadow-sm shadow-primary/20"
             >
               <Plus className="w-4 h-4" />
@@ -77,7 +84,10 @@ export function FloorManagementPage() {
             </p>
           </div>
           <div className="flex gap-2">
-            <Button className="flex sm:hidden items-center justify-center w-full py-2.5 bg-primary text-white font-semibold rounded-lg">
+            <Button
+              onClick={() => setIsAddFloorOpen(true)}
+              className="flex sm:hidden items-center justify-center w-full py-2.5 bg-primary text-white font-semibold rounded-lg"
+            >
               <Plus className="mr-2 w-4 h-4" /> Add Floor
             </Button>
             <Button
@@ -96,6 +106,11 @@ export function FloorManagementPage() {
         {/* Stats Summary */}
         <StatsSummary />
       </main>
+
+      <AddFloorModal
+        isOpen={isAddFloorOpen}
+        onClose={() => setIsAddFloorOpen(false)}
+      />
 
       {/* Footer */}
       <footer className="mt-auto border-t border-slate-200 dark:border-slate-800 px-6 py-4 bg-white dark:bg-background-dark">

@@ -14,6 +14,8 @@ Follow the modular folder structure:
     - **constants/**
     - **hooks/**
     - **pages/**
+      - table-management.tsx
+      - floor-management.tsx
     - **types/**
   - **order/**
   - **payment/**
